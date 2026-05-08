@@ -1,0 +1,53 @@
+<ion-content class="login-bg">
+
+    <div class="overlay"></div>
+  
+    <div class="login-container">
+  
+      <div class="logo-area">
+        <ion-icon name="film-outline"></ion-icon>
+        <h1>Cleber</h1>
+        <p>Faça seu login</p>
+      </div>
+  
+      <ion-card class="login-card">
+  
+        <ion-card-header>
+          <ion-card-title>Join the Audience</ion-card-title>
+        </ion-card-header>
+  
+        <ion-card-content>
+  
+          <ion-item>
+            <ion-label position="stacked">Username</ion-label>
+            <ion-input
+              [(ngModel)]="username"
+              placeholder="Enter your name">
+            </ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input
+              type="email"
+              [(ngModel)]="email"
+              placeholder="your@email.com">
+            </ion-input>
+          </ion-item>
+  
+          <ion-button
+            expand="block"
+            class="enter-btn"
+            (click)="entrar()">
+  
+            Enter
+  
+          </ion-button>
+  
+        </ion-card-content>
+  
+      </ion-card>
+  
+    </div>
+  
+  </ion-content>
