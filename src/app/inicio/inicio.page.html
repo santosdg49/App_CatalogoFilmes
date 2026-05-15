@@ -1,0 +1,256 @@
+<ion-header>
+
+  <ion-toolbar color="dark">
+
+    <ion-title>
+      CINEPHILE
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="inicio-bg">
+
+  <div class="container">
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+      <h1>
+        Find your next obsession
+      </h1>
+
+      <p>
+        Discover real movies, directors and cinematic experiences.
+      </p>
+
+      <!-- BUSCA -->
+
+      <ion-searchbar
+        [(ngModel)]="busca"
+        (ionInput)="buscarFilmes()"
+        placeholder="Search movie by title">
+      </ion-searchbar>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="filtros-container">
+
+      <!-- GÊNERO -->
+
+      <ion-item>
+
+        <ion-label>Genre</ion-label>
+
+        <ion-select
+          [(ngModel)]="generoSelecionado"
+          (ionChange)="buscarFilmes()">
+
+          <ion-select-option value="">
+            All
+          </ion-select-option>
+
+          <ion-select-option
+            *ngFor="let genero of generos"
+            [value]="genero.id">
+
+            {{ genero.name }}
+
+          </ion-select-option>
+
+        </ion-select>
+
+      </ion-item>
+
+      <!-- ANO -->
+
+      <ion-item>
+
+        <ion-label>Year</ion-label>
+
+        <ion-select
+          [(ngModel)]="anoSelecionado"
+          (ionChange)="buscarFilmes()">
+
+          <ion-select-option value="">
+            All
+          </ion-select-option>
+
+          <ion-select-option value="2025">
+            2025
+          </ion-select-option>
+
+          <ion-select-option value="2024">
+            2024
+          </ion-select-option>
+
+          <ion-select-option value="2023">
+            2023
+          </ion-select-option>
+
+          <ion-select-option value="2022">
+            2022
+          </ion-select-option>
+
+          <ion-select-option value="2021">
+            2021
+          </ion-select-option>
+
+          <ion-select-option value="2020">
+            2020
+          </ion-select-option>
+
+          <ion-select-option value="2010">
+            2010+
+          </ion-select-option>
+
+          <ion-select-option value="2000">
+            2000+
+          </ion-select-option>
+
+        </ion-select>
+
+      </ion-item>
+
+      <!-- DURAÇÃO -->
+
+      <ion-item>
+
+        <ion-label>Duration</ion-label>
+
+        <ion-select
+          [(ngModel)]="duracaoSelecionada"
+          (ionChange)="buscarFilmes()">
+
+          <ion-select-option value="">
+            All
+          </ion-select-option>
+
+          <ion-select-option value="90">
+            Up to 90 min
+          </ion-select-option>
+
+          <ion-select-option value="120">
+            120+ min
+          </ion-select-option>
+
+        </ion-select>
+
+      </ion-item>
+
+      <!-- DIRETOR -->
+
+      <ion-item>
+
+        <ion-label position="stacked">
+          Director
+        </ion-label>
+
+        <ion-input
+          [(ngModel)]="diretor"
+          (ionInput)="buscarFilmes()"
+          placeholder="Christopher Nolan">
+        </ion-input>
+
+      </ion-item>
+
+    </div>
+
+    <!-- LOADING -->
+
+    <div
+      *ngIf="carregando"
+      class="loading-container">
+
+      <ion-spinner name="crescent"></ion-spinner>
+
+      <p>
+        Loading movies...
+      </p>
+
+    </div>
+
+    <!-- SEM RESULTADOS -->
+
+    <div
+      *ngIf="!carregando && filmes.length === 0"
+      class="sem-resultados">
+
+      <ion-icon
+        name="film-outline">
+      </ion-icon>
+
+      <h2>
+        No movies found
+      </h2>
+
+      <p>
+        Try different filters.
+      </p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid-filmes">
+
+      <ion-card
+        *ngFor="let filme of filmes"
+        class="filme-card">
+
+        <!-- POSTER -->
+
+        <img
+          *ngIf="filme.poster_path"
+          [src]="getPoster(filme.poster_path)"
+          alt="Poster do filme">
+
+        <!-- PLACEHOLDER -->
+
+        <div
+          *ngIf="!filme.poster_path"
+          class="poster-placeholder">
+
+          <ion-icon name="image-outline"></ion-icon>
+
+        </div>
+
+        <!-- CONTEÚDO -->
+
+        <ion-card-content>
+
+          <h2>
+            {{ filme.title }}
+          </h2>
+
+          <div class="info-filme">
+
+            <span>
+              ⭐ {{ filme.vote_average | number:'1.1-1' }}
+            </span>
+
+            <span>
+              {{ filme.release_date | date:'yyyy' }}
+            </span>
+
+          </div>
+
+          <p class="overview">
+
+            {{ filme.overview || 'No description available.' }}
+
+          </p>
+
+        </ion-card-content>
+
+      </ion-card>
+
+    </div>
+
+  </div>
+
+</ion-content>

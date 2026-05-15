@@ -45,7 +45,7 @@ export class LoginPage {
         'Login realizado com sucesso!'
       );
 
-      this.router.navigate(['/home']);
+      this.router.navigate(['/inicio']);
 
     } else {
 

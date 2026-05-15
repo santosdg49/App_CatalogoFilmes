@@ -21,7 +21,12 @@ const routes: Routes = [
   path: 'conta',
   loadComponent: () =>
     import('./conta/conta.page').then(m => m.ContaPage)
-},
+  },
+
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
 
 ];
 

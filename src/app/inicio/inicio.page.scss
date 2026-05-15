@@ -1,0 +1,83 @@
+.inicio-bg{
+  --background:#0A0A0A;
+  color:white;
+}
+
+.header ion-title{
+  color:#8968cd;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.container{
+  padding:20px;
+}
+
+.hero h1{
+  font-size:32px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+ion-searchbar{
+  --background:#1c1c1c;
+  --color:white;
+  --placeholder-color:#777;
+  --border-radius:14px;
+}
+
+.filtros{
+  margin-top:25px;
+}
+
+.generos{
+  display:flex;
+  overflow-x:auto;
+  gap:10px;
+  padding:10px 0;
+}
+
+.filtro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:20px;
+}
+
+ion-item{
+  --background:#1c1c1c;
+  border-radius:12px;
+}
+
+.diretor-item{
+  margin-top:20px;
+}
+
+.grid-filmes{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:30px;
+}
+
+.filme-card{
+  background:#1a1a1a;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.filme-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.filme-card h2{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.filme-card p{
+  color:#bbb;
+}
