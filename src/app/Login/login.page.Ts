@@ -21,51 +21,44 @@ export class LoginPage {
 
   async entrar() {
 
-    // verifica se existe usuário salvo
+    // verifica se existe conta criada
     const usuarioSalvo = localStorage.getItem('usuarioCinephile');
 
-    // se não existir conta
     if (!usuarioSalvo) {
 
       await this.mostrarToast(
-        'Nenhuma conta encontrada. Crie uma conta primeiro.'
+        'Nenhuma conta encontrada. Crie uma conta.'
       );
 
-      this.router.navigate(['/conta']);
       return;
     }
 
-    // converte JSON para objeto
+    // converte para objeto
     const usuario = JSON.parse(usuarioSalvo);
 
-    // valida login
-    if (
-      this.email === usuario.email &&
-      this.senha === usuario.senha
-    ) {
+    // autenticação apenas pela senha
+    if (this.senha === usuario.senha && this.email === usuario.email) {
 
-      console.log('Login realizado com sucesso!');
-
-      // salva sessão simples
       localStorage.setItem('usuarioLogado', 'true');
 
-      await this.mostrarToast('Login realizado com sucesso!');
+      await this.mostrarToast(
+        'Login realizado com sucesso!'
+      );
 
+      this.router.navigate(['/home']);
 
     } else {
 
-      await this.mostrarToast('Email ou senha inválidos');
-      this.criarConta();
+      await this.mostrarToast(
+        'Senha ou email do usuário incorretos'
+      );
+
     }
 
   }
 
   criarConta() {
     this.router.navigate(['/conta']);
-  }
-
-  login() {
-    this.router.navigate(['/home']);
   }
 
   async mostrarToast(msg: string) {
