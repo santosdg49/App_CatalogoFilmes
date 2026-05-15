@@ -1,0 +1,82 @@
+<ion-content class="conta-bg">
+
+  <div class="overlay"></div>
+
+  <div class="container">
+
+    <div class="logo">
+      <h1>CINEPHILE</h1>
+      <p>Start your cinematic journey today</p>
+    </div>
+
+    <ion-card class="card">
+
+      <ion-card-header>
+        <ion-card-title>
+          Criar Conta
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Nome
+          </ion-label>
+
+          <ion-input
+            [(ngModel)]="nome"
+            placeholder="John Wick">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Email
+          </ion-label>
+
+          <ion-input
+            type="email"
+            [(ngModel)]="email"
+            placeholder="email@email.com">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Senha
+          </ion-label>
+
+          <ion-input
+            type="password"
+            [(ngModel)]="senha">
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">
+            Confirmar Senha
+          </ion-label>
+
+          <ion-input
+            type="password"
+            [(ngModel)]="confirmarSenha">
+          </ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          class="btn-criar"
+          (click)="criarConta()">
+
+          Criar Conta
+
+        </ion-button>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>
