@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InicioPage implements OnInit {
 
-  apiKey = 'YOUR_API_KEY';
+  apiKey = '0addb9c264e21b7a959566dd9ff2cc27';
 
   filmes: any[] = [];
 

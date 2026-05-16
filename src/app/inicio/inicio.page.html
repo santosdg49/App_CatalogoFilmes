@@ -10,7 +10,7 @@
 
 </ion-header>
 
-<ion-content class="inicio-bg">
+<ion-content class="inicio-bg" color="dark">
 
   <div class="container">
 
@@ -36,129 +36,97 @@
 
     </div>
 
-    <!-- FILTROS -->
+   <!-- FILTER PANEL -->
 
-    <div class="filtros-container">
+<div class="filter-panel">
 
-      <!-- GÊNERO -->
+  <!-- GENEROS -->
 
-      <ion-item>
+  <div class="filter-section">
 
-        <ion-label>Genre</ion-label>
+    <h3>
+      Genres
+    </h3>
 
-        <ion-select
-          [(ngModel)]="generoSelecionado"
-          (ionChange)="buscarFilmes()">
+    <div class="genre-scroll">
 
-          <ion-select-option value="">
-            All
-          </ion-select-option>
+      <button
+        class="genre-chip"
+        [class.active]="generoSelecionado === ''"
+        (click)="generoSelecionado=''; buscarFilmes()">
 
-          <ion-select-option
-            *ngFor="let genero of generos"
-            [value]="genero.id">
+        All
 
-            {{ genero.name }}
+      </button>
 
-          </ion-select-option>
+      <button
+        *ngFor="let genero of generos"
+        class="genre-chip"
+        [class.active]="generoSelecionado == genero.id"
+        (click)="generoSelecionado = genero.id; buscarFilmes()">
 
-        </ion-select>
+        {{ genero.name }}
 
-      </ion-item>
-
-      <!-- ANO -->
-
-      <ion-item>
-
-        <ion-label>Year</ion-label>
-
-        <ion-select
-          [(ngModel)]="anoSelecionado"
-          (ionChange)="buscarFilmes()">
-
-          <ion-select-option value="">
-            All
-          </ion-select-option>
-
-          <ion-select-option value="2025">
-            2025
-          </ion-select-option>
-
-          <ion-select-option value="2024">
-            2024
-          </ion-select-option>
-
-          <ion-select-option value="2023">
-            2023
-          </ion-select-option>
-
-          <ion-select-option value="2022">
-            2022
-          </ion-select-option>
-
-          <ion-select-option value="2021">
-            2021
-          </ion-select-option>
-
-          <ion-select-option value="2020">
-            2020
-          </ion-select-option>
-
-          <ion-select-option value="2010">
-            2010+
-          </ion-select-option>
-
-          <ion-select-option value="2000">
-            2000+
-          </ion-select-option>
-
-        </ion-select>
-
-      </ion-item>
-
-      <!-- DURAÇÃO -->
-
-      <ion-item>
-
-        <ion-label>Duration</ion-label>
-
-        <ion-select
-          [(ngModel)]="duracaoSelecionada"
-          (ionChange)="buscarFilmes()">
-
-          <ion-select-option value="">
-            All
-          </ion-select-option>
-
-          <ion-select-option value="90">
-            Up to 90 min
-          </ion-select-option>
-
-          <ion-select-option value="120">
-            120+ min
-          </ion-select-option>
-
-        </ion-select>
-
-      </ion-item>
-
-      <!-- DIRETOR -->
-
-      <ion-item>
-
-        <ion-label position="stacked">
-          Director
-        </ion-label>
-
-        <ion-input
-          [(ngModel)]="diretor"
-          (ionInput)="buscarFilmes()"
-          placeholder="Christopher Nolan">
-        </ion-input>
-
-      </ion-item>
+      </button>
 
     </div>
+
+  </div>
+
+  <!-- GRID -->
+
+  <div class="advanced-filters">
+
+    <!-- ANO -->
+
+    <div class="glass-filter">
+
+  <label>
+    Release Year
+  </label>
+
+  <ion-input
+    type="number"
+    [(ngModel)]="anoSelecionado"
+    (ionInput)="buscarFilmes()"
+    placeholder="1999">
+  </ion-input>
+
+</div>
+
+    <!-- DURAÇÃO -->
+
+    <div class="glass-filter">
+
+      <label>
+        Runtime
+      </label>
+
+      <ion-select
+        interface="popover"
+        [(ngModel)]="duracaoSelecionada"
+        (ionChange)="buscarFilmes()">
+
+        <ion-select-option value="">
+          All
+        </ion-select-option>
+
+        <ion-select-option value="90">
+          Up to 90 min
+        </ion-select-option>
+
+        <ion-select-option value="120">
+          120+ min
+        </ion-select-option>
+
+      </ion-select>
+
+    </div>
+
+  </div>
+
+
+</div>
 
     <!-- LOADING -->
 
