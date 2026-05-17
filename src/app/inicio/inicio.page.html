@@ -19,11 +19,11 @@
     <div class="hero">
 
       <h1>
-        Find your next obsession
+        Bem vindo!
       </h1>
 
       <p>
-        Discover real movies, directors and cinematic experiences.
+        Descubra novos filmes e experências
       </p>
 
       <!-- BUSCA -->
@@ -31,7 +31,7 @@
       <ion-searchbar
         [(ngModel)]="busca"
         (ionInput)="buscarFilmes()"
-        placeholder="Search movie by title">
+        placeholder="Pesquise por algum título">
       </ion-searchbar>
 
     </div>
@@ -45,7 +45,7 @@
   <div class="filter-section">
 
     <h3>
-      Genres
+      Gêneros
     </h3>
 
     <div class="genre-scroll">
@@ -55,7 +55,7 @@
         [class.active]="generoSelecionado === ''"
         (click)="generoSelecionado=''; buscarFilmes()">
 
-        All
+        Todos
 
       </button>
 
@@ -82,7 +82,7 @@
     <div class="glass-filter">
 
   <label>
-    Release Year
+    Ano de lançamento
   </label>
 
   <ion-input
@@ -99,7 +99,7 @@
     <div class="glass-filter">
 
       <label>
-        Runtime
+        Duração
       </label>
 
       <ion-select
@@ -108,15 +108,15 @@
         (ionChange)="buscarFilmes()">
 
         <ion-select-option value="">
-          All
+          Todos
         </ion-select-option>
 
         <ion-select-option value="90">
-          Up to 90 min
+          Até 90 minutos
         </ion-select-option>
 
         <ion-select-option value="120">
-          120+ min
+          120 minutos ou mais
         </ion-select-option>
 
       </ion-select>
@@ -137,7 +137,7 @@
       <ion-spinner name="crescent"></ion-spinner>
 
       <p>
-        Loading movies...
+        Carregando filmes...
       </p>
 
     </div>
@@ -153,11 +153,11 @@
       </ion-icon>
 
       <h2>
-        No movies found
+        Filme não encontrado
       </h2>
 
       <p>
-        Try different filters.
+        Tente outro título.
       </p>
 
     </div>
@@ -168,7 +168,8 @@
 
       <ion-card
         *ngFor="let filme of filmes"
-        class="filme-card">
+        class="filme-card"
+        (click) = "abrirDetalhes(filme.id)">
 
         <!-- POSTER -->
 
@@ -204,14 +205,12 @@
             <span>
               {{ filme.release_date | date:'yyyy' }}
             </span>
+            
+            <span>
+              {{filme.original_language | uppercase}}
+            </span>
 
           </div>
-
-          <p class="overview">
-
-            {{ filme.overview || 'No description available.' }}
-
-          </p>
 
         </ion-card-content>
 

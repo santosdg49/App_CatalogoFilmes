@@ -28,6 +28,14 @@ const routes: Routes = [
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
 
+   {
+
+    path: 'detalhes/:id',
+    loadChildren: () =>
+    import('./detalhes/detalhes.module').then(m => m.DetalhesPageModule)
+    
+  },
+
 ];
 
 @NgModule({

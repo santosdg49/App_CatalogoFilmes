@@ -89,6 +89,7 @@ ion-searchbar{
   display:grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap:20px;
+  text-align: center;
 }
 
 .filme-card{
@@ -113,6 +114,7 @@ ion-searchbar{
   height:320px;
   object-fit:cover;
 }
+
 
 .container{
   background-color: #1c1c1c;

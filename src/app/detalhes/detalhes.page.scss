@@ -1,0 +1,566 @@
+:host {
+
+  --background: #0a0a0a;
+
+}
+
+/* FUNDO */
+
+.detalhes-bg {
+
+  --background: #0a0a0a;
+
+  color: white;
+
+}
+
+/* LOADING */
+
+.loading-container {
+
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 16px;
+
+  color: #b892ff;
+
+  font-size: 16px;
+
+}
+
+/* BACKDROP */
+
+.backdrop {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  background-size: cover;
+
+  background-position: center;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+
+}
+
+/* OVERLAY CINEMATOGRÁFICO */
+
+.overlay {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding: 32px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10,10,10,0.98) 15%,
+      rgba(10,10,10,0.92) 35%,
+      rgba(10,10,10,0.65) 60%,
+      rgba(10,10,10,0.35) 100%
+    );
+
+  backdrop-filter: blur(2px);
+
+}
+
+/* TOP BAR */
+
+.top-bar {
+
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 40px;
+
+}
+
+/* BOTÕES */
+
+.top-button {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border-radius: 14px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s;
+
+}
+
+.top-button:hover {
+
+  background: rgba(137,104,205,0.2);
+
+  border-color: #8968cd;
+
+  transform: translateY(-2px);
+
+}
+
+.favorite {
+
+  background: #8968cd;
+
+}
+
+.favorite:hover {
+
+  background: #a785f0;
+
+}
+
+/* HERO */
+
+.hero-content {
+
+  display: flex;
+
+  gap: 40px;
+
+  align-items: flex-end;
+
+  margin-top: 40px;
+
+}
+
+/* POSTER */
+
+.poster {
+
+  width: 300px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6),
+    0 0 40px rgba(137,104,205,0.2);
+
+  transition: 0.3s;
+
+}
+
+.poster:hover {
+
+  transform: scale(1.02);
+
+}
+
+/* INFO */
+
+.movie-info {
+
+  flex: 1;
+
+  max-width: 800px;
+
+}
+
+.movie-info h1 {
+
+  font-size: 58px;
+
+  font-weight: 800;
+
+  margin-bottom: 18px;
+
+  line-height: 1.05;
+
+  color: white;
+
+}
+
+/* META */
+
+.meta {
+
+  display: flex;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 22px;
+
+}
+
+.meta span {
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+
+  color: #d6d6d6;
+
+}
+
+/* GÊNEROS */
+
+.genres {
+
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 24px;
+
+}
+
+.genre-chip {
+
+  background: #8968cd;
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+}
+
+/* OVERVIEW */
+
+.overview {
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #d0d0d0;
+
+  margin-bottom: 32px;
+
+}
+
+/* GRID */
+
+.details-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+  gap: 18px;
+
+}
+
+/* CARD */
+
+.detail-card {
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(12px);
+
+}
+
+.detail-card label {
+
+  display: block;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  color: #b892ff;
+
+  margin-bottom: 8px;
+
+}
+
+.detail-card p {
+
+  font-size: 15px;
+
+  color: white;
+
+  font-weight: 600;
+
+}
+
+/* SECTIONS */
+
+.section {
+
+  padding: 40px 32px;
+
+}
+
+.section h2 {
+
+  font-size: 32px;
+
+  margin-bottom: 24px;
+
+  font-weight: 800;
+
+}
+
+/* ELENCO */
+
+.cast-scroll {
+
+  display: flex;
+
+  gap: 18px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+
+}
+
+.cast-scroll::-webkit-scrollbar {
+
+  height: 6px;
+
+}
+
+.cast-scroll::-webkit-scrollbar-thumb {
+
+  background: #8968cd;
+
+  border-radius: 999px;
+
+}
+
+/* CARD ELENCO */
+
+.cast-card {
+
+  min-width: 170px;
+
+  background: rgba(255,255,255,0.04);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+}
+
+.cast-card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: #8968cd;
+
+}
+
+.cast-card img {
+
+  width: 100%;
+
+  height: 230px;
+
+  object-fit: cover;
+
+}
+
+.cast-info {
+
+  padding: 14px;
+
+}
+
+.cast-info h3 {
+
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #bdbdbd;
+
+}
+
+.cast-info p {
+
+  font-size: 13px;
+  color: #8968cd;
+
+}
+
+/* RECOMENDADOS */
+
+.recommend-grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  color: #bdbdbd;
+
+}
+
+.section h2{
+    color: white;
+}
+
+/* CARD RECOMENDADO */
+
+.recommend-card {
+
+  background: rgba(255,255,255,0.04);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+}
+
+.recommend-card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: #8968cd;
+
+}
+
+.recommend-card img {
+
+  width: 100%;
+
+  height: 270px;
+
+  object-fit: cover;
+
+}
+
+.recommend-card h3 {
+
+  padding: 14px;
+
+  font-size: 15px;
+
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .hero-content {
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+  }
+
+  .movie-info h1 {
+
+    font-size: 42px;
+
+  }
+
+  .poster {
+
+    width: 240px;
+
+  }
+
+  .meta {
+
+    justify-content: center;
+
+  }
+
+  .genres {
+
+    justify-content: center;
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .overlay {
+
+    padding: 20px;
+
+  }
+
+  .movie-info h1 {
+
+    font-size: 34px;
+
+  }
+
+  .section {
+
+    padding: 28px 20px;
+
+  }
+
+  .top-button {
+
+    font-size: 13px;
+
+    padding: 10px 16px;
+
+  }
+
+}

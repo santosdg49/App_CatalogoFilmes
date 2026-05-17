@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -27,14 +28,11 @@ export class InicioPage implements OnInit {
 
   carregando = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,  private router: Router) {}
 
   ngOnInit() {
-
     this.carregarGeneros();
-
     this.buscarFilmes();
-
   }
 
   // =========================
@@ -195,6 +193,10 @@ export class InicioPage implements OnInit {
 
     return `https://image.tmdb.org/t/p/w500${path}`;
 
+  }
+
+  abrirDetalhes(id: number){
+    this.router.navigate(['/detalhes', id]);
   }
 
 }

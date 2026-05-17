@@ -1,0 +1,243 @@
+<ion-content class="detalhes-bg">
+
+  <!-- LOADING -->
+
+  <div
+    *ngIf="carregando"
+    class="loading-container">
+
+    <ion-spinner name="crescent"></ion-spinner>
+
+    <p>
+      caregando filme...
+    </p>
+
+  </div>
+
+  <!-- CONTEÚDO -->
+
+  <div *ngIf="!carregando && filme">
+
+    <!-- BACKDROP -->
+
+    <div
+      class="backdrop"
+      [style.background-image]="'url(' + getBackdrop(filme.backdrop_path) + ')'">
+
+      <div class="overlay">
+
+        <!-- TOP BAR -->
+
+        <div class="top-bar">
+
+          <!-- VOLTAR -->
+
+          <button
+            class="top-button"
+            (click)="voltarInicio()">
+
+            <ion-icon name="arrow-back-outline"></ion-icon>
+
+            Voltar
+
+          </button>
+
+          <!-- ASSISTIDOS -->
+
+          <button
+            class="top-button favorite"
+            (click)="adicionarAssistidos()">
+
+            <ion-icon name="bookmark-outline"></ion-icon>
+
+            Adionar à lista de assistidos
+
+          </button>
+
+        </div>
+
+        <!-- HERO -->
+
+        <div class="hero-content">
+
+          <!-- POSTER -->
+
+          <img
+            class="poster"
+            [src]="getPoster(filme.poster_path)"
+            alt="Poster do filme">
+
+          <!-- INFORMAÇÕES -->
+
+          <div class="movie-info">
+
+            <h1>
+              {{ filme.title }}
+            </h1>
+
+            <!-- META -->
+
+            <div class="meta">
+
+              <span>
+                ⭐ {{ filme.vote_average | number:'1.1-1' }}
+              </span>
+
+              <span>
+                {{ filme.release_date | date:'yyyy' }}
+              </span>
+
+              <span>
+                {{ filme.runtime }} min
+              </span>
+
+            </div>
+
+            <!-- GÊNEROS -->
+
+            <div class="genres">
+
+              <span
+                *ngFor="let genero of filme.genres"
+                class="genre-chip">
+
+                {{ genero.name }}
+
+              </span>
+
+            </div>
+
+            <!-- DESCRIÇÃO -->
+
+            <p class="overview">
+
+              {{ filme.overview }}
+
+            </p>
+
+            <!-- GRID DE DETALHES -->
+
+            <div class="details-grid">
+
+              <!-- DIRETOR -->
+
+              <div class="detail-card">
+
+                <label>
+                  Diretor(a)
+                </label>
+
+                <p>
+                  {{ pegarDiretor() }}
+                </p>
+
+              </div>
+
+              <!-- IDIOMA -->
+
+              <div class="detail-card">
+
+                <label>
+                  Idioma original
+                </label>
+
+                <p>
+                  {{ filme.original_language | uppercase }}
+                </p>
+
+              </div>
+
+              <!-- POPULARIDADE -->
+
+              <div class="detail-card">
+
+                <label>
+                  popularidade
+                </label>
+
+                <p>
+                  {{ filme.popularity | number:'1.0-0' }}
+                </p>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ELENCO -->
+
+    <div class="section">
+
+      <h2>
+        Elenco
+      </h2>
+
+      <div class="cast-scroll">
+
+        <div
+          *ngFor="let ator of filme.credits.cast.slice(0,10)"
+          class="cast-card">
+
+          <img
+            *ngIf="ator.profile_path"
+            [src]="getPoster(ator.profile_path)"
+            alt="Ator">
+
+          <div class="cast-info">
+
+            <h3>
+              {{ ator.name }}
+            </h3>
+
+            <p>
+              {{ ator.character }}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RECOMENDADOS -->
+
+    <div class="section">
+
+      <h2>
+        Filmes recomendados
+      </h2>
+      
+      <div class="recommend-grid">
+
+        <div
+          *ngFor="let recomendado of filme.recommendations.results.slice(0,6)"
+          class="recommend-card"
+          (click)="abrirDetalhes(recomendado.id)">
+
+          <img
+            [src]="getPoster(recomendado.poster_path)"
+            alt="Filme recomendado">
+
+          <h3>
+            {{ recomendado.title }}
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>
