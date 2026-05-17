@@ -36,6 +36,14 @@ const routes: Routes = [
     
   },
 
+  {
+    path: 'assistidos',
+    loadChildren: () =>
+      import('./assistidos/assistidos.module').then(
+        m => m.AssistidosPageModule
+      )
+  },
+
 ];
 
 @NgModule({

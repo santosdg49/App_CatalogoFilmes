@@ -1,0 +1,225 @@
+:host {
+
+  --background: #0a0a0a;
+
+}
+
+.assistidos-bg {
+
+  --background: #0a0a0a;
+
+  color: white;
+
+}
+
+/* HEADER */
+
+.top-bar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 28px;
+
+}
+
+.top-bar h1 {
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  color: #8968cd;
+
+}
+
+/* BOTÃO */
+
+.back-button {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+}
+
+/* EMPTY */
+
+.empty-state {
+
+  height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  color: #cfcfcf;
+
+}
+
+.empty-state ion-icon {
+
+  font-size: 90px;
+
+  color: #8968cd;
+
+  margin-bottom: 20px;
+
+}
+
+/* GRID */
+
+.movies-grid {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
+  justify-content: center;
+  gap: 24px;
+  padding: 28px;
+
+}
+
+/* CARD */
+
+.movie-card {
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.movie-card:hover {
+
+  transform: scale(1.05);
+  border-color: #8968cd;
+
+}
+
+/* POSTER */
+
+.poster-container {
+
+  cursor: pointer;
+  height: 320px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+
+}
+
+.poster-container img {
+
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+
+}
+
+/* INFO */
+
+.movie-info {
+
+  padding: 16px;
+  color: #bdbdbd;
+
+}
+
+.movie-info h2 {
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  text-align: center;
+
+}
+
+
+/* META */
+
+.movie-meta {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+
+}
+
+.movie-meta span {
+
+  font-size: 13px;
+
+}
+
+.nota{
+    color: #8968cd;
+}
+
+/* REMOVER */
+
+.remove-button {
+
+  width: 100%;
+
+  background: rgba(255,255,255,0.06);
+
+  border: none;
+
+  color: #ff7b7b;
+
+  padding: 12px;
+
+  border-radius: 14px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-weight: 600;
+
+}
+
+.remove-button:hover {
+
+  background: rgba(255,123,123,0.12);
+
+}

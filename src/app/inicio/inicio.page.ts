@@ -199,4 +199,8 @@ export class InicioPage implements OnInit {
     this.router.navigate(['/detalhes', id]);
   }
 
+  abrirAssistidos(){
+    this.router.navigate(['/assistidos'])
+  }
+
 }

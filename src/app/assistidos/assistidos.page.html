@@ -1,0 +1,105 @@
+<ion-content class="assistidos-bg">
+
+  <!-- HEADER -->
+
+  <div class="top-bar">
+
+    <button
+      class="back-button"
+      (click)="voltarInicio()">
+
+      <ion-icon name="arrow-back-outline"></ion-icon>
+
+      Voltar
+
+    </button>
+
+    <h1>
+      Filmes assistidos
+    </h1>
+
+  </div>
+
+  <!-- VAZIO -->
+
+  <div
+    *ngIf="filmes.length === 0"
+    class="empty-state">
+
+    <ion-icon name="film-outline"></ion-icon>
+
+    <h2>
+      Nenhum filme adicionado até o momento
+    </h2>
+
+    <p>
+      Adicione alguma produção à sua lista.
+    </p>
+
+  </div>
+
+  <!-- GRID -->
+
+  <div
+    *ngIf="filmes.length > 0"
+    class="movies-grid">
+
+    <div
+      *ngFor="let filme of filmes"
+      class="movie-card">
+
+      <!-- POSTER -->
+
+      <div
+        class="poster-container"
+        (click)="abrirDetalhes(filme.id)">
+
+        <img
+          [src]="getPoster(filme.poster_path)"
+          alt="Poster">
+
+      </div>
+
+      <!-- INFO -->
+
+      <div class="movie-info">
+
+        <h2>
+          {{ filme.title }}
+        </h2>
+
+        <div class="movie-meta">
+
+          <span class="nota">
+            {{ filme.vote_average | number:'1.1-1' }}
+          </span>
+
+          <span>
+            {{ filme.release_date | date:'yyyy' }}
+          </span>
+
+          <span>
+            {{ filme.original_language | uppercase }}
+          </span>
+
+        </div>
+
+        <!-- REMOVER -->
+
+        <button
+          class="remove-button"
+          (click)="removerFilme(filme.id)">
+
+          <ion-icon name="trash-outline"></ion-icon>
+
+          Remover
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

@@ -20,11 +20,15 @@
 
       <h1>
         Bem vindo!
+        <p class="paragrafo_hero">
+          Descubra novos filmes e experências
+        </p>
       </h1>
 
-      <p>
-        Descubra novos filmes e experências
-      </p>
+      <button class="Botao-assistidos" (click)="abrirAssistidos()">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        Acessar lista de assistidos
+      </button>
 
       <!-- BUSCA -->
 
@@ -34,7 +38,10 @@
         placeholder="Pesquise por algum título">
       </ion-searchbar>
 
+      
+
     </div>
+
 
    <!-- FILTER PANEL -->
 
