@@ -36,7 +36,7 @@ export class LoginPage {
     // converte para objeto
     const usuario = JSON.parse(usuarioSalvo);
 
-    // autenticação apenas pela senha
+    // autenticação pela senha e email
     if (this.senha === usuario.senha && this.email === usuario.email) {
 
       localStorage.setItem('usuarioLogado', 'true');
