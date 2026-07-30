@@ -1,6 +1,18 @@
-#Aplicativo Ionic de catálogo de filmes com os seguintes componentes:
-. Login: Tela de login que permite o usuário realizar login com um usuário e senha (armazenamento com local storage);
-. assistidos: Lista de filmes assistidos pelo usuário;
-. conta: Tela para cadastrar um usuário e senha;
-. detalhes: Tela de detalhes de um filme;
-. inicio: Tela de inicio com cards de filmes, barra de pesquisa e filtros.
+# Aplicativo Ionic de catálogo de filmes
+
+## Componentes
+
+- **Login**
+  - Tela de login que permite ao usuário realizar autenticação utilizando usuário e senha (armazenados com Local Storage).
+
+- **Assistidos**
+  - Lista de filmes assistidos pelo usuário.
+
+- **Conta**
+  - Tela para cadastro de usuário e senha.
+
+- **Detalhes**
+  - Tela de detalhes de um filme.
+
+- **Início**
+  - Tela inicial com cards de filmes, barra de pesquisa e filtros.
